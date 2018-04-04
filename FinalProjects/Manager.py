@@ -87,7 +87,8 @@ def find_object_and_merge(image,output_size):
     return img_final
 
 input_image = generate_image_for_processing(400,cv2.imread("w512h5121390845821B512.png"))
+temp = input_image.copy()
 merge_image = find_object_and_merge(input_image,400)
-final = np.hstack((input_image,merge_image))
+final = np.hstack((temp,merge_image))
 cv2.imshow("FinalImg", final)
 cv2.waitKey(0)
